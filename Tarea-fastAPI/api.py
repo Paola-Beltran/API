@@ -6,7 +6,7 @@ from contextlib import asynccontextmanager # Creacion de tablas en la base de da
 
 #crear conexion con la base datos
 sqlite_nombre ="Paola.db" # nombre base de datos
-sqlite_url = f"sqlite:///C:\\Paola\\API\\curso-fastapi-project\\{sqlite_nombre}" # ruta de acceso
+sqlite_url = f"sqlite:////workspaces/API/Tarea-fastAPI/{sqlite_nombre}" # ruta de acceso
 motor = create_engine(sqlite_url) # conexion con la base de datos SQLite
 
 # crear las tablas
