@@ -62,7 +62,7 @@ async def crear_peliculas(peliculas_data: peliculas_creadas, sesion: sesionDep):
 
 
 # leer una pelicula con el metodo get
-@app.get("/peliculas/{_id}",
+@app.get("/peliculas/{peliculas_id}",
          response_model= peliculas,
          tags=["peliculas"])
 async def leer_peliculas(peliculas_id: int, sesion: sesionDep):
@@ -73,7 +73,7 @@ async def leer_peliculas(peliculas_id: int, sesion: sesionDep):
 
 
 # actualizar una pelicula con el metodo put
-@app.put("/peliculas/{_id}",
+@app.put("/peliculas/{peliculas_id}",
            response_model= peliculas,
            status_code= status.HTTP_201_CREATED,
            tags=["peliculas"])
@@ -90,7 +90,7 @@ async def ajuste_pelicula(peliculas_id: int, peliculas_data: peliculas_actualiza
 
 
 # eliminar una pelicula con el metodo delete
-@app.delete("/peliculas/{_id}", tags=["peliculas"])
+@app.delete("/peliculas/{peliculas_id}", tags=["peliculas"])
 async def borrar_peliculas(peliculas_id: int, sesion: sesionDep):
     peliculas_db = sesion.get(peliculas, peliculas_id)
     if not peliculas_db:
